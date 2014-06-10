@@ -1,8 +1,6 @@
 package test;
 
 import java.io.IOException;
-import java.util.Calendar;
-import java.util.Date;
 
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
@@ -40,10 +38,19 @@ public class AddLinkDataServlet extends HttpServlet{
         String count4 = req.getParameter("count4");
         int num7 = Integer.parseInt(count4);
         int num8 = num7*3400;
-        int num9 = num2+num4+num6+num8;
-        String total = String.valueOf(num9);
+        String count5 = req.getParameter("count5");
+        int num9 = Integer.parseInt(count5);
+        int num10 = num9*200;
+        String count6 = req.getParameter("count6");
+        int num11 = Integer.parseInt(count6);
+        int num12 = num11*150;
+        String count7 = req.getParameter("count7");
+        int num13 = Integer.parseInt(count7);
+        int num14 = num13*300;
+        int num15 = num2+num4+num6+num8+num10+num12+num14;
+        String total = String.valueOf(num15);
 
-        LinkData data = new LinkData(name,url,pass,count1,count2,count3,count4,total);
+        LinkData data = new LinkData(name,url,pass,count1,count2,count3,count4,count5,count6,count7,total);
         PersistenceManagerFactory factory = PMF.get();
         PersistenceManager manager = factory.getPersistenceManager();
         try {
@@ -51,7 +58,7 @@ public class AddLinkDataServlet extends HttpServlet{
         } finally {
             manager.close();
         }
-        resp.sendRedirect("/index.html");
+        resp.sendRedirect("/exit.html");
     }
 
 }

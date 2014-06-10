@@ -1,6 +1,6 @@
 
- 
- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <!-- The HTML 4.01 Transitional DOCTYPE declaration-->
 <!-- above set at the top of the file will set     -->
 <!-- the browser's rendering engine into           -->
@@ -9,75 +9,132 @@
 <!-- but may lead to some differences in layout.   -->
 
 <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Pizzashop</title>
-  </head>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Pizzashop</title>
+</head>
 
-  <body onload="getData(null);">
-    <h1>Pizzashop</h1>
-    <center>
- 
-   <form method="post" action="/add" name="chbox">
-<div style="float:center"><img src="./kuwatoro.jpg"alt="クワトロ"width="180"height="120"hspace="10"><br><input type="checkbox" name="pizza1" value="クワトロ">クワトロ 
-       	  枚数:<input type="text" name="count1" size="2" value="0"></div>
-<div style="float:center"><img src="./chesse.jpg"alt="チーズ"width="180"height="120"hspace="10"><br><input type="checkbox" name="pizza2" value="チーズメルト">チーズメルト
-       	  枚数:<input type="text" name="count2" size="2" value="0"></div>
-<div style="float:center"><img src="./mirufiyu.jpg"alt="ミルフィーユ"width="180"height="120"hspace="10"><br><input type="checkbox" name="pizza3" value="カマンベールミルフィーユ">カマンベールミルフィーユ 
-       	  枚数:<input type="text" name="count3" size="2" value="0"></div>
-<div style="float:center"><img src="./risutorante.jpg"alt="リストランテ"width="180"height="120"hspace="10"><br><input type="checkbox" name="pizza4" value="リストランテ">リストランテ 
-       	  枚数:<input type="text" name="count4" size="2" value="0"></div>
-       	  
-       	 <br>  <tr><th>　名前:</th><td><input type="text" name="title"></td></tr>
-           <br> <tr><th>　住所:</th><td><input type="text" name="url"></td></tr>
-            <br> <tr><th>パスワード:</th><td><input type="text" name="comment"></td></tr>
-<tr><th></th><td><input type="submit" value="追加" onclick="boxCheck()"></td></tr></center>
-<div style="clear:both"></div>
-       </form>
-       
-       
-         <div style="clear:both"></div>  
-         
- <script>
+<body onload="getData(null);">
+	<h1>Pizzashop</h1>
+	<center>
 
-function boxCheck(){
+		<form method="post" action="/add" name="chbox">
+			<div style="float: center">
+				<img src="./kuwatoro.jpg" alt="クワトロ" width="180" height="120"
+					hspace="10"><br> <input type="checkbox" name="pizza1"
+					value="クワトロ">クワトロ 枚数:<input type="text" name="count1"
+					size="2" value="0">
+			</div>
+			<div style="float: center">
+				<img src="./chesse.jpg" alt="チーズ" width="180" height="120"
+					hspace="10"><br> <input type="checkbox" name="pizza2"
+					value="チーズメルト">チーズメルト 枚数:<input type="text" name="count2"
+					size="2" value="0">
+			</div>
+			<div style="float: center">
+				<img src="./mirufiyu.jpg" alt="ミルフィーユ" width="180" height="120"
+					hspace="10"><br> <input type="checkbox" name="pizza3"
+					value="カマンベールミルフィーユ">カマンベールミルフィーユ 枚数:<input type="text"
+					name="count3" size="2" value="0">
+			</div>
+			<div style="float: center">
+				<img src="./risutorante.jpg" alt="リストランテ" width="180" height="120"
+					hspace="10"><br> <input type="checkbox" name="pizza4"
+					value="リストランテ">リストランテ 枚数:<input type="text" name="count4"
+					size="2" value="0">
+			</div>
+			<div style="float: center">
+				<img src="./toppingcheese.jpg" alt="チーズ" width="180" height="120"
+					hspace="10"><br> <input type="checkbox" name="topping"
+					value="チーズ">チーズ 枚数:<input type="text" name="count5"
+					size="2" value="0">
+			</div>
+			<div style="float: center">
+				<img src="./onionn.jpg" alt="タマネギ" width="180" height="120"
+					hspace="10"><br> <input type="checkbox" name="topping"
+					value="タマネギ">タマネギ 枚数:<input type="text" name="count6"
+					size="2" value="0">
+			</div>
+			<div style="float: center">
+				<img src="./ham.jpg" alt="ハム" width="180" height="120"
+					hspace="10"><br> <input type="checkbox" name="topping"
+					value="ハム">ハム 枚数:<input type="text" name="count7"
+					size="2" value="0">
+			</div>
 
-  //チェックされた項目を記録する変数
-  var str="";
-  
-  //for文でチェックボックスを１つずつ確認
-  for( i=0; i<8; i++ )
-  {
-    //チェックされているか確認する
-    if( document.chbox.elements[i].checked )
-    {
-    	if(document.chbox.elements[i+1].value!=0){
-      //変数strが空でない時、区切りのコンマを入れる
-      if( str != "" ) str=str+", ";
-      
-      //チェックボックスのvalue値を変数strに入れる
-      
-      str=str+document.chbox.elements[i].value+" "+document.chbox.elements[i+1].value+"個が選択されました。";
-      }
-    } 
-  }
-  
-  total = 2200*document.chbox.elements[1].value+2300*document.chbox.elements[3].value+2400*document.chbox.elements[5].value+2600*document.chbox.elements[7].value;
-  
-  str = str+" 合計金額は"+ total+"円です。";
-  
-  //strが空の時、警告を出す
-  if( str=="" ){
-     alert( "どれか選択してください。" );
-  }else{
-    alert( str);
-  }
-}
+			<br>
+			<tr>
+				<th>名前:</th>
+				<td><input type="text" name="title"></td>
+			</tr>
+			<br>
+			<tr>
+				<th>住所:</th>
+				<td><input type="text" name="url"></td>
+			</tr>
+			<br>
+			<tr>
+				<th>パスワード:</th>
+				<td><input type="text" name="comment"></td>
+			</tr>
+			<tr>
+				<th></th>
+				<td><input type="submit" value="追加" onclick="boxCheck()"></td>
+			</tr>
+	</center>
+	<div style="clear: both"></div>
+	</form>
 
-</script>
- <center>
-    <div><a href="index.html">戻る</a></div>
- </center>
-  </body>
+
+	<div style="clear: both"></div>
+
+	<script>
+		function boxCheck() {
+
+			//チェックされた項目を記録する変数
+			var str = "";
+
+			//for文でチェックボックスを１つずつ確認
+			for (i = 0; i < 13; i++) {
+				//チェックされているか確認する
+				if (document.chbox.elements[i].checked) {
+					if (document.chbox.elements[i + 1].value != 0) {
+						//変数strが空でない時、区切りのコンマを入れる
+						if (str != "")
+							str = str + ", ";
+
+						//チェックボックスのvalue値を変数strに入れる
+
+						str = str + document.chbox.elements[i].value + " "
+								+ document.chbox.elements[i + 1].value
+								+ "個が選択されました。";
+					}
+				}
+			}
+
+			total = 2200 * document.chbox.elements[1].value + 2300
+					* document.chbox.elements[3].value + 2400
+					* document.chbox.elements[5].value + 2600
+					* document.chbox.elements[7].value + 200
+					* document.chbox.elements[9].value+ 150
+					* document.chbox.elements[11].value+ 300
+					* document.chbox.elements[13].value;
+
+			str = str + " 合計金額は" + total + "円です。";
+
+			//strが空の時、警告を出す
+			if (str == "") {
+				alert("どれか選択してください。");
+			} else {
+				alert(str);
+			}
+		}
+	</script>
+	<center>
+		<div>
+			<a href="index.html">戻る</a>
+		</div>
+	</center>
+</body>
 </html>
- 
+

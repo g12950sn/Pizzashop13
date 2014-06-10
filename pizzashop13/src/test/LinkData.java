@@ -1,6 +1,5 @@
 package test;
 
-import java.util.Date;
 
 import javax.jdo.annotations.*;
 
@@ -30,13 +29,22 @@ public class LinkData {
 	    private String count3;
 	     
 	    @Persistent
-	    private String count4;	
+	    private String count4;
+	    
+	    @Persistent
+	    private String count5;
+	    
+	    @Persistent
+	    private String count6;
+	    
+	    @Persistent
+	    private String count7;
 	    
 	    @Persistent
 	    private String total;
 	    
 	 
-	    public LinkData(String title, String url, String comment,String count1, String count2, String count3, String count4, String count5) {
+	    public LinkData(String title, String url, String comment,String count1, String count2, String count3, String count4, String count5,String count6,String count7,String total) {
 	        super();
 	        this.name = title;
 	        this.url = url;
@@ -45,7 +53,10 @@ public class LinkData {
 	        this.count2 = count2;
 	        this.count3 = count3;
 	        this.count4 = count4;
-	        this.total = count5;
+	        this.count5 = count5;
+	        this.count6 = count6;
+	        this.count7 = count7;
+	        this.total = total;
 	    }
 	 
 	    public Long getId() {
@@ -113,11 +124,35 @@ public class LinkData {
 	    }
 	    
 	    public String getCount5(){
-	    	return total;
+	    	return count5;
 	    }
 	    
 	    public void setCount5(String count5){
-	    	this.total = count5;
+	    	this.count5 = count5;
+	    }
+	    
+	    public String getCount6(){
+	    	return count6;
+	    }
+	    
+	    public void setCount6(String count6){
+	    	this.count6 = count6;
+	    }
+	    
+	    public String getCount7(){
+	    	return count7;
+	    }
+	    
+	    public void setCount7(String count7){
+	    	this.count7 = count7;
+	    }
+	    
+	    public String getTotal(){
+	    	return total;
+	    }
+	    
+	    public void setTotal(String total){
+	    	this.total = total;
 	    }
 
 	

@@ -16,11 +16,11 @@ function createHttpRequest(){
 function getData(id){
     var request = createHttpRequest();
     if (request == null){
-        alert("HttpRequestが取得できませんでした。");
+        alert("HttpRequestがありません");
         return;
     }
-    var uri = "/testgae";
-    if (id != null) uri = "/testgae?id=" + id;
+    var uri = "/testage";
+    if (id != null) uri = "/testage?id=" + id;
     request.open("GET",uri,true);
     request.setRequestHeader("User-Agent","XMLHttpRequest");
     request.onreadystatechange = function(){
