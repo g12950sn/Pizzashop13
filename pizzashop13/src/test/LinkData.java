@@ -87,8 +87,8 @@ public class LinkData {
 	        return pass;
 	    }
 	 
-	    public void setComment(String comment) {
-	        this.pass = comment;
+	    public void setComment(String pass) {
+	        this.pass = pass;
 	    }
 	
 	    public String getCount1() {
